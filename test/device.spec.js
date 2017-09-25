@@ -12,20 +12,32 @@ describe('device test', () => {
 
     it('isDesktop', () => {
         let device = DeviceDetector.fromUserAgent(desktopAgent);
-        let result = device.isDesktop;
-        expect(result).equals(true);
+        let isDesktop = device.isDesktop;
+        let isTablet = device.isTablet;
+        let isMobile = device.isMobile;
+        expect(isDesktop).equals(true);
+        expect(isTablet).equals(false);
+        expect(isMobile).equals(false);
     });
 
     it('isTablet', () => {
         let device = DeviceDetector.fromUserAgent(tabletAgent);
-        let result = device.isTablet;
-        expect(result).equals(true);
+        let isDesktop = device.isDesktop;
+        let isTablet = device.isTablet;
+        let isMobile = device.isMobile;
+        expect(isDesktop).equals(false);
+        expect(isTablet).equals(true);
+        expect(isMobile).equals(false);
     });
 
     it('isMobile', () => {
         let device = DeviceDetector.fromUserAgent(iphoneAgent);
-        let result = device.isMobile;
-        expect(result).equals(true);
+        let isDesktop = device.isDesktop;
+        let isTablet = device.isTablet;
+        let isMobile = device.isMobile;
+        expect(isDesktop).equals(false);
+        expect(isTablet).equals(false);
+        expect(isMobile).equals(true);
     });
 
 });
@@ -34,26 +46,46 @@ describe('Operating systems test', () => {
 
     it('isIphone', () => {
         let device = DeviceDetector.fromUserAgent(iphoneAgent);
-        let result = device.isIphone;
-        expect(result).equals(true);
+        let isIphone = device.isIphone;
+        let isIpad = device.isIpad;
+        let isIOS = device.isIOS;
+        let isAndroid = device.isAndroid;
+        expect(isIphone).equals(true);
+        expect(isIpad).equals(false);
+        expect(isIOS).equals(true);
+        expect(isAndroid).equals(false);
     });
 
     it('isIpad', () => {
         let device = DeviceDetector.fromUserAgent(ipadAgent);
-        let result = device.isIpad;
-        expect(result).equals(true);
+        let isIphone = device.isIphone;
+        let isIpad = device.isIpad;
+        let isIOS = device.isIOS;
+        let isAndroid = device.isAndroid;
+        expect(isIphone).equals(false);
+        expect(isIpad).equals(true);
+        expect(isIOS).equals(true);
+        expect(isAndroid).equals(false);
     });
 
     it('isIOS', () => {
         let device = DeviceDetector.fromUserAgent(iphoneAgent);
-        let result = device.isIOS;
-        expect(result).equals(true);
+        let isIOS = device.isIOS;
+        let isAndroid = device.isAndroid;
+        expect(isIOS).equals(true);
+        expect(isAndroid).equals(false);
     });
 
     it('isAndroid', () => {
         let device = DeviceDetector.fromUserAgent(androidAgent);
-        let result = device.isAndroid;
-        expect(result).equals(true);
+        let isIphone = device.isIphone;
+        let isIpad = device.isIpad;
+        let isIOS = device.isIOS;
+        let isAndroid = device.isAndroid;
+        expect(isIphone).equals(false);
+        expect(isIpad).equals(false);
+        expect(isIOS).equals(false);
+        expect(isAndroid).equals(true);
     });
 
 });
@@ -62,20 +94,20 @@ describe('Versions test', () => {
 
     it('androidVersion', () => {
         let device = DeviceDetector.fromUserAgent(androidAgent);
-        let result = device.androidVersion;
-        expect(result).equals('6.0');
+        let androidVersion = device.androidVersion;
+        expect(androidVersion).equals('6.0');
     });
 
     it('iOSVersion', () => {
         let device = DeviceDetector.fromUserAgent(iphoneAgent);
-        let result = device.iOSVersion;
-        expect(result).equals(9.1);
+        let iOSVersion = device.iOSVersion;
+        expect(iOSVersion).equals(9.1);
     });
 
     it('ieVersion', () => {
         let device = DeviceDetector.fromUserAgent(ie);
-        let result = device.ieVersion;
-        expect(result).equals(15);
+        let ieVersion = device.ieVersion;
+        expect(ieVersion).equals(15);
     });
 
 });

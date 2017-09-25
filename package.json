@@ -2,10 +2,10 @@
   "name": "device",
   "version": "1.0.0",
   "description": "test device module",
-  "main": "device.js",
+  "main": "./src/device.js",
   "scripts": {
     "test": "mocha",
-    "server:device": "device-tester"
+    "start": "node index.js"
   },
   "author": "Mobilunity",
   "license": "ISC",
@@ -14,6 +14,6 @@
     "mocha": "3.5.3"
   },
   "dependencies": {
-    "device-tester": "1.0.0"
+    "device-detecter": "1.0.0"
   }
 }
