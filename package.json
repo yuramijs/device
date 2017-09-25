@@ -9,6 +9,6 @@
   "author": "Mobilunity",
   "license": "ISC",
   "dependencies": {
-    "device-detecter": "1.0.1"
+    "device-detecter": "2.0.2"
   }
 }
